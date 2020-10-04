@@ -5,7 +5,7 @@ from mytoolbox.mytoolbox import *
 from flask import Flask, request
 
 # Load model
-model = pickle.load(open('models/lgbm_pipe.pkl', 'rb'))
+model = pickle.load(open('models/lgbm_pipe_tunning_retrained.pkl', 'rb'))
 
 
 # Instanciate Flask
