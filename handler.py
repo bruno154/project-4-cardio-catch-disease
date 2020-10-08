@@ -54,7 +54,7 @@ def predict_thresh():
 
     for i in range(0, len(pred_prob)):
 
-        if pred_prob[i, 1] >= 0.6:
+        if pred_prob[i, 1] >= 0.4:
             pred_prob[i, 1] = 1
         else:
             pred_prob[i, 1] = 0
