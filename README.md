@@ -54,8 +54,9 @@ Download the data: https://www.kaggle.com/sulianova/cardiovascular-disease-datas
 
 # References:
 
-Notebook code and analysis: https://github.com/bruno154/project-4-cardio-catch-disease/blob/main/notebooks/project-catch-disease-pa001.ipynb
-Business Presentation: https://github.com/bruno154/project-4-cardio-catch-disease/blob/main/cardio_catch_disease.pdf
+Notebook code and analysis:[Link](https://github.com/bruno154/project-4-cardio-catch-disease/blob/main/notebooks/project-catch-disease-pa001.ipynb)
+
+Business Presentation:[Link](https://github.com/bruno154/project-4-cardio-catch-disease/blob/main/cardio_catch_disease.pdf)
 
 
 # Author:
