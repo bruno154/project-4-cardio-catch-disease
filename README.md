@@ -22,9 +22,9 @@ Answer the CEO questions,
 3. How Reliable is the result given by the new tool?
 
 
-Business problem reference: https://sejaumdatascientist.com/projeto-de-data-science-diagnostico-precoce-de-doencas-cardiovasculares/
+Business problem reference:[Link]https://sejaumdatascientist.com/projeto-de-data-science-diagnostico-precoce-de-doencas-cardiovasculares/
 
-Download the data: https://www.kaggle.com/sulianova/cardiovascular-disease-dataset
+Download the data:[Link]https://www.kaggle.com/sulianova/cardiovascular-disease-dataset
 
 
 # Planning
