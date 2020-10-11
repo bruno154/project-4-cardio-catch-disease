@@ -1,5 +1,6 @@
 import pandas as pd
-from sklearn.preprocessing import RobustScaler, OneHotEncoder
+from sklearn.preprocessing import RobustScaler
+from sklearn.cluster import KMeans
 from sklearn.base import BaseEstimator, TransformerMixin
 
 
@@ -46,8 +47,11 @@ class FeatureEngineeringTransformer(BaseEstimator, TransformerMixin):
     def transform(self, X, y=None):
         Xtemp = X.copy()
 
+        # Year_age
+        Xtemp['year_age'] = Xtemp['age'] / 365
+
         # drop 'id' and 'age' 'smoke','alco','gluc', 'ap_lo', 'cholesterol', 'height', 'active', 'weight'
-        Xtemp.drop('id', inplace=True, axis=1)
+        Xtemp.drop(['id', 'age'], inplace=True, axis=1)
 
         # IMC
         Xtemp['imc'] = Xtemp['weight']/(Xtemp['height']/100)**2
@@ -69,7 +73,6 @@ class FeatureEngineeringTransformer(BaseEstimator, TransformerMixin):
 
         # ap_lo divide 10
         Xtemp.loc[Xtemp['ap_lo'] > 190, ['ap_lo']] = Xtemp.loc[Xtemp['ap_lo'] > 190,['ap_lo']]/10
-
 
         return Xtemp
 
@@ -139,25 +142,5 @@ class MyRobustScalerTransformer(BaseEstimator, TransformerMixin):
         scaler = RobustScaler()
         Xscaled = scaler.fit_transform(Xtemp)
         Xtemp = pd.DataFrame(Xscaled, columns=Xtemp.columns.to_list())
-
-        return Xtemp
-
-
-class MyOneHotEncoderTransformer(BaseEstimator, TransformerMixin):
-
-    def __init__(self):
-        pass
-
-    def fit(self, X, y=None):
-        return self
-
-    def transform(self, X, y=None):
-
-        Xtemp = X.copy()
-
-        scaler = OneHotEncoder(drop='first')
-        Xscaled = scaler.fit_transform(Xtemp)
-        colunas = list(scaler.get_feature_names(['cholesterol', 'gluc', 'active', 'gender', 'smoke', 'alco']))
-        Xtemp = pd.DataFrame(Xscaled.toarray(), columns=colunas)
 
         return Xtemp
